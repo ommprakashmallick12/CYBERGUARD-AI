@@ -6,8 +6,6 @@ Four scanners (Photo, Deepfake/AI-image, Phishing link, Emoji/hidden Unicode). P
 Double-click `run.bat` (uses installed Python, or downloads a portable copy once). Opens http://localhost:8000.
 Linux/Mac: `python3 server.py`.
 
-## Deploy on Render
-Entry point is `server.py` (it is a built-in `http.server` app, so the start command is `python server.py` - not gunicorn). Build: `python -m py_compile server.py`, Health check: `/health`. See `DEPLOY-RENDER.md`. Render's `PORT` is used and the server binds to `0.0.0.0`.
 
 Optional environment variables: `VIRUSTOTAL_API_KEY`, `GOOGLE_SAFE_BROWSING_API_KEY`, `URLHAUS_API_KEY` (phishing threat intel; shown as "unavailable" when not set), `CYBERGUARD_THREAT_INTEL=0` to disable external lookups, plus the existing `MAX_UPLOAD_MB`, `RATE_LIMIT_PER_MIN`, `MAX_CONCURRENT_SCANS`.
 
